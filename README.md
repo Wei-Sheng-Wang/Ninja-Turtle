@@ -252,7 +252,7 @@ The function provided in **OnAccept(Connection \*)** by users will be augmented 
 Let's walk through an example of traditional echo server in less than 20 lines:
 
 ```CPP
-#include "core/Ninja Turtle_server.h"
+#include "core/Turtle_server.h"
 
 int main() {
   Ninja Turtle_SERVER::NetAddress local_address("0.0.0.0", 20080);
