@@ -1,19 +1,19 @@
-<img src="image/ninja.jpeg" alt="TurtleChat Logo" height="250">
+<img src="image/ninja.jpeg" alt="Ninja TurtleChat Logo" height="250">
 
 
 -----------------
 
-<!--[![Build & Test](https://github.com/WangWeiSheng/Turtle/actions/workflows/build_actions.yml/badge.svg?branch=main)](https://github.com/WangWeiSheng/Turtle/actions/workflows/build_actions.yml)
-<a href="https://github.com/WangWeiSheng/Turtle/blob/main/LICENSE"><img src="https://badgen.net/github/license/WangWeiSheng/Turtle?color=orange" alt="license"></a>
-<a href="https://github.com/WangWeiSheng/Turtle"><img src="https://img.shields.io/badge/Language-C++-red.svg"></a>
-<a href="https://github.com/WangWeiSheng/Turtle"><img src="https://badgen.net/badge/OS Support/Linux/cyan?list=1" alt="os"></a>
-<a href="https://github.com/WangWeiSheng/Turtle"><img src="https://badgen.net/badge/Database/MySQL/white?list=1" alt="os"></a>
-<a href="https://github.com/WangWeiSheng/Turtle/stargazers"><img src="https://badgen.net/github/stars/WangWeiSheng/Turtle?color=yellow" alt="stars"></a>
-<a href="https://github.com/WangWeiSheng/Turtle/network/members"><img src="https://badgen.net/github/forks/WangWeiSheng/Turtle?color=black" alt="forks"></a> -->
-## TURTLE
+<!--[![Build & Test](https://github.com/WangWeiSheng/Ninja Turtle/actions/workflows/build_actions.yml/badge.svg?branch=main)](https://github.com/WangWeiSheng/Ninja Turtle/actions/workflows/build_actions.yml)
+<a href="https://github.com/WangWeiSheng/Ninja Turtle/blob/main/LICENSE"><img src="https://badgen.net/github/license/WangWeiSheng/Ninja Turtle?color=orange" alt="license"></a>
+<a href="https://github.com/WangWeiSheng/Ninja Turtle"><img src="https://img.shields.io/badge/Language-C++-red.svg"></a>
+<a href="https://github.com/WangWeiSheng/Ninja Turtle"><img src="https://badgen.net/badge/OS Support/Linux/cyan?list=1" alt="os"></a>
+<a href="https://github.com/WangWeiSheng/Ninja Turtle"><img src="https://badgen.net/badge/Database/MySQL/white?list=1" alt="os"></a>
+<a href="https://github.com/WangWeiSheng/Ninja Turtle/stargazers"><img src="https://badgen.net/github/stars/WangWeiSheng/Ninja Turtle?color=yellow" alt="stars"></a>
+<a href="https://github.com/WangWeiSheng/Ninja Turtle/network/members"><img src="https://badgen.net/github/forks/WangWeiSheng/Ninja Turtle?color=black" alt="forks"></a> -->
+## Ninja Turtle
 
 
-**Turtle** is a C++17-based lightweight network library for web server on Linux. It abstracts the tedious manipulations on the socket into elegant and reusable classes. It allows a fast server side setup where the custom business logic could be specified for each client TCP connection in the form of a callback function. It now supports HTTP GET/HEAD request and response as well.
+**Ninja Turtle** is a C++17-based lightweight network library for web server on Linux. It abstracts the tedious manipulations on the socket into elegant and reusable classes. It allows a fast server side setup where the custom business logic could be specified for each client TCP connection in the form of a callback function. It now supports HTTP GET/HEAD request and response as well.
 
 <!-- For any question, feel free to raise issue or pull request or drop me an [email](mailto:WangWeiSheng.cs@gmail.com) here. -->
 
@@ -35,7 +35,7 @@
 
 <img src="image/system_architecture_en.png" alt="System Architecture New" height="450">
 
-The above system architecture diagram briefly shows how the **Turtle** framework works on a high level.
+The above system architecture diagram briefly shows how the **Ninja Turtle** framework works on a high level.
 
 1. The basic unit is a **Connection** which contains a **Socket** and a **Buffer** for bytes in-and-out. Users register a **callback** function for each connection.
 2. The system starts with an **Acceptor**, which contains one acceptor connection. It builds connection for each new client, and distribute the workload to one of the **Looper**s.
@@ -44,29 +44,29 @@ The above system architecture diagram briefly shows how the **Turtle** framework
 5. The **ThreadPool** manages how many **Looper**s are there in the system to avoid over-subscription.
 6. Optionally there exists a **Cache** layer using LRU policy with tunable storage size parameters.
 
-The **Turtle** core network part is around 1000 lines of code, and the HTTP+CGI module is another 700 lines.
+The **Ninja Turtle** core network part is around 1000 lines of code, and the HTTP+CGI module is another 700 lines.
 
 ### Docker
 
-If you are not a Linux system but still want to try out the **Turtle** on Linux for fun, we provide a Vagrant File to provision the Linux Docker. Notice as of current, **Turtle** is compatible with Linux and MacOS for build.
+If you are not a Linux system but still want to try out the **Ninja Turtle** on Linux for fun, we provide a Vagrant File to provision the Linux Docker. Notice as of current, **Ninja Turtle** is compatible with Linux and MacOS for build.
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads) and [Docker](https://docs.docker.com/desktop/). For macOS, you may use homebrew to install Vagrant but **do not** use homebrew to install Docker. Instead, download Docker Desktop from the link above.
 
 2. Start the Docker application in the background
 
-3. Drag out the `Vagrantfile` and place it in parallel with the `Turtle` project folder. For example, consider the following file structure:
+3. Drag out the `Vagrantfile` and place it in parallel with the `Ninja Turtle` project folder. For example, consider the following file structure:
 
 ```text
-/Turtle_Wrapper
-    - /Turtle
+/Ninja Turtle_Wrapper
+    - /Ninja Turtle
     - /Vagrantfile
 ```
 
-4. `cd` to the `Turtle_Wrapper` folder and run command `vagrant up --provider=docker`. This step should take a few minutes to build up the environment and install all the necessary tool chains.
+4. `cd` to the `Ninja Turtle_Wrapper` folder and run command `vagrant up --provider=docker`. This step should take a few minutes to build up the environment and install all the necessary tool chains.
 
 5. Enter the docker environment by `vagrant ssh developer`
 
-6. `cd` to the directory `/vagrant/Turtle`. This directory is in sync with the original `./Turtle`folder. You may modify the source code and its effect will be propagated to the docker's folder as well.
+6. `cd` to the directory `/vagrant/Ninja Turtle`. This directory is in sync with the original `./Ninja Turtle`folder. You may modify the source code and its effect will be propagated to the docker's folder as well.
 
 7. Follow the steps in next section to build up the project.
 
@@ -98,7 +98,7 @@ $ make linecount
 <!-- 
 ### Performance Benchmark
 
-To test the performance of **Turtle** server under high concurrency, we adopt [Webbench](http://cs.uccs.edu/~cs526/webbench/webbench.htm) as the stress testing tool.
+To test the performance of **Ninja Turtle** server under high concurrency, we adopt [Webbench](http://cs.uccs.edu/~cs526/webbench/webbench.htm) as the stress testing tool.
 
 The source code of the Webbench is stored under the `./webbench` directory along with a simple testing shell script. 
 
@@ -179,9 +179,9 @@ We use the sample script [here](https://github.com/denischatelain/libevent-http-
 
 
 ### API Style
-The classes in the **Turtle** library are designed with the focus of decoupling firmly in mind. Most of the components can be taken out alone or a few together and used independently, especially those components in the **network core** module.
+The classes in the **Ninja Turtle** library are designed with the focus of decoupling firmly in mind. Most of the components can be taken out alone or a few together and used independently, especially those components in the **network core** module.
 
-Let's take an example from the most basic **Socket** class, assuming that we just want to borrow the **Turtle** library to avoid the cumbersome steps of **socket** establishment. First, let's take a look at the main interface of the **Socket** class:
+Let's take an example from the most basic **Socket** class, assuming that we just want to borrow the **Ninja Turtle** library to avoid the cumbersome steps of **socket** establishment. First, let's take a look at the main interface of the **Socket** class:
 
 ```CPP
 /**
@@ -235,13 +235,13 @@ NetAddress client_address;
 int client_fd = server_sock.Accept(client_address);
 ```
 
-There are many other components in **Turtle** that are easy to decouple and use separately. You can view the source code and use them according to needs.
+There are many other components in **Ninja Turtle** that are easy to decouple and use separately. You can view the source code and use them according to needs.
 
 ### Usage
 
 #### General 
 
-To setup a general custom server, user should create an instance of **TurtleServer** and then only needs to provide two callback functions:
+To setup a general custom server, user should create an instance of **Ninja TurtleServer** and then only needs to provide two callback functions:
 1. **OnAccept(Connection \*)**: A function to do extra business logic when accepting a new client connection.
 2. **OnHandle(Connection \*)**: A function to serve an existing client's request.
 
@@ -252,13 +252,13 @@ The function provided in **OnAccept(Connection \*)** by users will be augmented 
 Let's walk through an example of traditional echo server in less than 20 lines:
 
 ```CPP
-#include "core/turtle_server.h"
+#include "core/Ninja Turtle_server.h"
 
 int main() {
-  TURTLE_SERVER::NetAddress local_address("0.0.0.0", 20080);
-  TURTLE_SERVER::TurtleServer echo_server(local_address);
+  Ninja Turtle_SERVER::NetAddress local_address("0.0.0.0", 20080);
+  Ninja Turtle_SERVER::Ninja TurtleServer echo_server(local_address);
   echo_server
-      .OnHandle([&](TURTLE_SERVER::Connection* client_conn) {
+      .OnHandle([&](Ninja Turtle_SERVER::Connection* client_conn) {
         int from_fd = client_conn->GetFd();
         auto [read, exit] = client_conn->Recv();
         if (exit) {
@@ -289,11 +289,11 @@ $ ./echo_server
 $ ./echo_client
 ```
 
-There are also simple **Redis**-like KV-Store demo provided under `./demo/kvstore` to illustrate various usages of **Turtle**.
+There are also simple **Redis**-like KV-Store demo provided under `./demo/kvstore` to illustrate various usages of **Ninja Turtle**.
 
 #### HTTP
 
-The HTTP server [demo](./src/http/http_server.cpp) is under `./src/http` folder for reference as well. It supports **GET** and **HEAD** methods. A simple HTTP server could be set up in less than 50 lines with the help of **Turtle** core and http module. 
+The HTTP server [demo](./src/http/http_server.cpp) is under `./src/http` folder for reference as well. It supports **GET** and **HEAD** methods. A simple HTTP server could be set up in less than 50 lines with the help of **Ninja Turtle** core and http module. 
 
 #### CGI
 The CGI module is built upon HTTP server and executes in the traditional parent-child cross-process way. After parsing the arguments, the [**Cgier**](./src/include/http/cgier.h) `fork` a child process to execute the cgi program and communicate back the result to parent process through a shared temporary file. 
@@ -305,7 +305,7 @@ GET /cgi-bin/add&1&2 HTTP/1.1
 ```
 
 #### Database
-Since database is an indispensable part of many web applications, **Turtle** also supports basic interactions with databases, **MySQL** in specific. We wrap the official MySQL C++ Connector into simple connections that can execute queries and return back results. Users of **Turtle** may consider plug in this component when implementing custom service callback functions.
+Since database is an indispensable part of many web applications, **Ninja Turtle** also supports basic interactions with databases, **MySQL** in specific. We wrap the official MySQL C++ Connector into simple connections that can execute queries and return back results. Users of **Ninja Turtle** may consider plug in this component when implementing custom service callback functions.
 
 The relevant source code is under [db](./src/db) folder. Users may refer to [setup.sql](./setup/setup.sql) and [mysqler_test](./test/db/mysqler_test.cpp) for setup and simple usage reference.
 
@@ -316,7 +316,7 @@ For a bare minimal use example, suppose on port `3306` of `localhost` the `root`
 #include "db/mysqler.h"
 
 /* for convenience reason */
-using TURTLE_SERVER::DB::MySqler;
+using Ninja Turtle_SERVER::DB::MySqler;
 
 int main(int argc, char* argv[]) {
     // init a db connection
@@ -363,7 +363,7 @@ The followings are on the **TODO** list:
 - ✅ Enable dynamic CGI request support
 - ✅ Complete unit testing coverage
 - ✅ Benchmark with other leading libraries
-<!-- - [ ] Profile Turtle's main runtime bottleneck
+<!-- - [ ] Profile Ninja Turtle's main runtime bottleneck
 - [ ] Review suggestions on [reddit](https://www.reddit.com/r/cpp/comments/10vrv4i/seeking_improve_advice_on_my_c_network_library/) are listed on issues to contemplate and experiment -->
 <!-- - ✅ Support asynchronous logging mechanism
 - ✅ Support timing each client connection and kills inactive ones
@@ -373,7 +373,7 @@ We also welcome new feature request. We will review them one by one, and priorti
 
 <!-- ### Reference -->
 <!-- 
-Serveral reference books and projects are consulted during the development of **Turtle**. Much appreciation to those excellent references and helps received.
+Serveral reference books and projects are consulted during the development of **Ninja Turtle**. Much appreciation to those excellent references and helps received.
 
 + [Network Programming Using Internet Sockets](https://beej.us/guide/bgnet/)
 + [Linux Multithreaded Server Programming: Using the Muduo C++ Network Library](http://www.amazon.cn/dp/B00FF1XYJI)
