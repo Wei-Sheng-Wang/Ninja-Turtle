@@ -241,7 +241,7 @@ There are many other components in **Ninja Turtle** that are easy to decouple an
 
 #### General 
 
-To setup a general custom server, user should create an instance of **Ninja TurtleServer** and then only needs to provide two callback functions:
+To setup a general custom server, user should create an instance of **Turtle Server** and then only needs to provide two callback functions:
 1. **OnAccept(Connection \*)**: A function to do extra business logic when accepting a new client connection.
 2. **OnHandle(Connection \*)**: A function to serve an existing client's request.
 
@@ -255,10 +255,10 @@ Let's walk through an example of traditional echo server in less than 20 lines:
 #include "core/Turtle_server.h"
 
 int main() {
-  Ninja Turtle_SERVER::NetAddress local_address("0.0.0.0", 20080);
-  Ninja Turtle_SERVER::Ninja TurtleServer echo_server(local_address);
+  Turtle_SERVER::NetAddress local_address("0.0.0.0", 20080);
+  Turtle_SERVER::TurtleServer echo_server(local_address);
   echo_server
-      .OnHandle([&](Ninja Turtle_SERVER::Connection* client_conn) {
+      .OnHandle([&](Turtle_SERVER::Connection* client_conn) {
         int from_fd = client_conn->GetFd();
         auto [read, exit] = client_conn->Recv();
         if (exit) {
