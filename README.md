@@ -382,4 +382,4 @@ Serveral reference books and projects are consulted during the development of **
 + [30dayMakeCppServer](https://github.com/yuesong-feng/30dayMakeCppServer)
 + [Very basic C++ HTTP Parser](https://codereview.stackexchange.com/questions/205704/very-basic-c-http-parser)
 + [C++ Threaded Logger](https://codereview.stackexchange.com/questions/191880/c-threaded-logger)
-+ [MySQL C++ official Documentation](https://dev.mysql.com/doc/connector-cpp/1.1/en/connector-cpp-examples-complete-example-1.html) --> -->
++ [MySQL C++ official Documentation](https://dev.mysql.com/doc/connector-cpp/1.1/en/connector-cpp-examples-complete-example-1.html) -->
